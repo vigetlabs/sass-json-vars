@@ -5,7 +5,7 @@ require 'sass-json-vars'
 class SassJSONVarsTest < Test::Unit::TestCase
 
   def test_can_flatten_hashes
-    flattened = SassJSONVars.flat_hash({
+    flattened = SassJSONVars::Importer.flat_hash({
       :color => { :red => "#c33" }
     })
     assert_match '#c33', flattened['color-red']

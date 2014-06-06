@@ -1,7 +1,7 @@
 require 'sass'
 require 'json'
 
-class SassJSONVars < Sass::Importers::Base
+class SassJSONVars::Importer < Sass::Importers::Base
 
   def find(uri, options)
     if File.extname(uri) == '.json'
