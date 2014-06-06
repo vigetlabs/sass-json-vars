@@ -1,7 +1,8 @@
 require 'sass'
 require 'json'
 
-class SpriteImporter < Sass::Importers::Base
+class SassJSONVars < Sass::Importers::Base
+
   def find(uri, options)
     if File.extname(uri) == '.json'
       self.class.sass_engine(uri, self, options)

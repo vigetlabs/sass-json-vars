@@ -1,9 +1,18 @@
-GEM
+PATH
+  remote: .
   specs:
+    sass-json-vars (0.0.1)
+      sass (>= 3.1)
+
+GEM
+  remote: http://rubygems.org/
+  specs:
+    rake (10.3.2)
     sass (3.3.8)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
-  sass
+  rake
+  sass-json-vars!

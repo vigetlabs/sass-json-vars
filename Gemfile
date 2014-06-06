@@ -1,1 +1,4 @@
-gem 'sass'
+source "http://rubygems.org"
+gemspec
+
+gem 'rake'
