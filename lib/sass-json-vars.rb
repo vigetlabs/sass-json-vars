@@ -1,5 +1,4 @@
-module SassJSONVars
-end
+module SassJSONVars; end
 
 require 'sass-json-vars/importer';
 
