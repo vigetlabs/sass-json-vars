@@ -1,0 +1,5 @@
+@import 'test/fixtures/strings/variables.json';
+
+body {
+	color: $color-red;
+}

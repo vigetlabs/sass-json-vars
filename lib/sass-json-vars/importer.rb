@@ -27,18 +27,23 @@ class SassJSONVars::Importer < Sass::Importers::Base
     other.class == self.class
   end
 
-  def self.flat_hash(h, f=[], g={})
-    return g.update({ f.join('-') => h }) unless h.is_a? Hash
-    h.each { |k,r| flat_hash(r,f+[k],g) }
-    g
+  def self.convert_to_sass(item)
+    if item.is_a? Array
+      '(' + item.map { |i| self.convert_to_sass(i) }.join(',') + ')'
+    elsif item.is_a? Hash
+      '(' + item.map {|key, value| key.to_s + ':' + self.convert_to_sass(value) }.join(',') + ')'
+    else
+      item
+    end
   end
 
-  # Returns a Sass::Engine for this sprite object
   def self.sass_engine(uri, importer, options)
-    flattened = self.flat_hash JSON.parse(IO.read(uri))
+    json = JSON.parse(IO.read(uri))
 
-    variables = flattened.map do |name, value|
-      "$#{name}: #{value}"
+    variables = json.map do |name, value|
+      output = self.convert_to_sass(value);
+
+      "$#{name}: #{output}"
     end
 
     Sass::Engine.new(variables.join("\n"))

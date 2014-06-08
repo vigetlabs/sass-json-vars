@@ -1,15 +1,21 @@
 # Sass JSON Vars
 
-A work in progress.
+`@import` json data into Sass `$variables`.
 
-### Eventual Usage
+### Usage
+
+```shell
+gem install sass-json-vars
+```
 
 Place variables in a JSON file:
 
 ```javascript
+// variables.json
 {
-    color: {
-        red: "#c33"
+    "font-sans": "Helvetica, sans-serif",
+    "colors": {
+        "red": "#c33"
     }
 }
 ```
@@ -20,6 +26,13 @@ Import the file in Sass to expose variable names:
 @import "variables.json"
 
 body {
-    color: $color-red;
+    color: map-get($colors, red),
+    font: $font-sans
 }
+```
+
+Require sass-json-vars when compiling
+
+```shell
+sass style.scss -r sass-json-vars
 ```
