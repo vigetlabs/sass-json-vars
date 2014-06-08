@@ -26,8 +26,8 @@ Import the file in Sass to expose variable names:
 @import "variables.json"
 
 body {
-    color: map-get($colors, red),
-    font: $font-sans
+    color: map-get($colors, red);
+    font: $font-sans;
 }
 ```
 
