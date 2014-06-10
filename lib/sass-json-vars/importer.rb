@@ -4,19 +4,23 @@ require 'json'
 class SassJSONVars::Importer < Sass::Importers::Filesystem
 
   def watched_file?(uri)
-    filename =~ /\.json$/ && filename.start_with?(root + File::SEPARATOR)
+    uri =~ /\.json$/ && uri.start_with?(root + File::SEPARATOR)
   end
 
   def extensions
     {'json' => :scss}
   end
 
+  def json?(name)
+    File.extname(name) == '.json'
+  end
+
   def find(name, options)
-    File.extname(name) == '.json' ? super(name, options) : nil
+    super(name, options) if json? name
   end
 
   def find_relative(name, base, options)
-    File.extname(name) == '.json' ? super(name, base, options) : nil
+    super(name, base, options) if json? name
   end
 
   def sass_engine(uri, options)
