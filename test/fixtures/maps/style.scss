@@ -1,5 +1,5 @@
-@import 'test/fixtures/maps/variables.json';
+@import 'variables.json';
 
 body {
-	color: map-get($colors, red); 
+	color: map-get($colors, red);
 }
