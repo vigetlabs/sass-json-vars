@@ -4,8 +4,11 @@ require 'json'
 class SassJSONVars::Importer < Sass::Importers::Filesystem
 
   def watched_file?(uri)
-    uri =~ /\.json$/ && uri.start_with?(root + File::SEPARATOR)
+    uri =~ /\.json$/ &&
+      uri.start_with?(root + File::SEPARATOR)
   end
+
+  protected
 
   def extensions
     {'json' => :scss}
@@ -15,36 +18,18 @@ class SassJSONVars::Importer < Sass::Importers::Filesystem
     File.extname(name) == '.json'
   end
 
-  def find(name, options)
-    super(name, options) if json? name
-  end
-
-  def find_relative(name, base, options)
-    super(name, base, options) if json? name
-  end
-
-  def sass_engine(uri, options)
-    json = JSON.parse(IO.read(uri))
-
-    variables = json.map do |name, value|
-      output = _convert_to_sass(value);
-      "$#{name}: #{output}"
-    end
-
-    Sass::Engine.new(variables.join("\n"))
-  end
-
   private
 
   def _find(dir, name, options)
+    return unless json? name
+
     full_filename, syntax = Sass::Util.destructure(find_real_file(dir, name, options))
     return unless full_filename && File.readable?(full_filename)
 
-    options[:syntax] = syntax
-    options[:filename] = full_filename
-    options[:importer] = self
+    json      = JSON.parse(IO.read(full_filename))
+    variables = json.map { |key, value| "$#{key}: #{_convert_to_sass(value)}" }.join("\n")
 
-    sass_engine(full_filename, options)
+    Sass::Engine.new(variables)
   end
 
   def _convert_to_sass(item)
@@ -64,5 +49,4 @@ class SassJSONVars::Importer < Sass::Importers::Filesystem
   def _make_map(item)
     '(' + item.map {|key, value| key.to_s + ':' + _convert_to_sass(value) }.join(',') + ')'
   end
-
 end
