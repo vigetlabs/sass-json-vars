@@ -19,4 +19,6 @@ Gem::Specification.new do |s|
   s.test_files  = Dir['test/**/*']
 
   s.add_runtime_dependency 'sass', '>= 3.1'
+  s.add_development_dependency 'simplecov', '~> 0.7.1'
+  s.add_development_dependency 'coveralls'
 end
