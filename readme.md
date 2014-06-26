@@ -1,6 +1,9 @@
 # Sass JSON Vars
 
-[![Coverage Status](https://coveralls.io/repos/vigetlabs/sass-json-vars/badge.png)](https://coveralls.io/r/vigetlabs/sass-json-vars) [![Build Status](https://travis-ci.org/vigetlabs/sass-json-vars.png?branch=master)](https://travis-ci.org/vigetlabs/sass-json-vars) [![Gem Version](https://badge.fury.io/rb/sass-json-vars.png)](http://badge.fury.io/rb/sass-json-vars)
+[![Build Status](https://travis-ci.org/vigetlabs/sass-json-vars.png?branch=master)](https://travis-ci.org/vigetlabs/sass-json-vars)
+[![Coverage Status](https://coveralls.io/repos/vigetlabs/sass-json-vars/badge.png)](https://coveralls.io/r/vigetlabs/sass-json-vars)
+[![Code Climate](https://codeclimate.com/github/vigetlabs/sass-json-vars.png)](https://codeclimate.com/github/vigetlabs/sass-json-vars)
+[![Gem Version](https://badge.fury.io/rb/sass-json-vars.png)](http://badge.fury.io/rb/sass-json-vars)
 
 `@import` json data into Sass `$variables`.
 
