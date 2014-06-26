@@ -5,8 +5,8 @@ module SassJSONVars
   class Importer < Sass::Importers::Filesystem
 
     def watched_file?(uri)
-      uri =~ /\.json$/ &&
-        uri.start_with?(root + File::SEPARATOR)
+      !!(uri =~ /\.json$/ &&
+        uri.start_with?(root + File::SEPARATOR))
     end
 
     protected
