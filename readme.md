@@ -7,11 +7,17 @@
 
 `@import` json data into Sass `$variables`.
 
+
+**Important:** the latest version of [`sass-rails`](https://github.com/rails/sass-rails) is locked in to Sass 3.2. This means that [Sass maps](http://thesassway.com/news/sass-3-3-released#maps) are not available to `sass-json-vars` to parse nested objects.
+
 ### Usage
 
 ```shell
 gem install sass-json-vars
 ```
+
+#### For projects using Sass >= 3.3 
+
 
 Place variables in a JSON file:
 
@@ -35,6 +41,36 @@ body {
     font: $font-sans;
 }
 ```
+
+Require sass-json-vars when compiling
+
+```shell
+sass style.scss -r sass-json-vars
+```
+
+#### For projects using Sass <= 3.2
+
+Place variables in a JSON file:
+
+```javascript
+// variables.json
+{
+    "font-sans": "Helvetica, sans-serif",
+    "colors-red": "#c33"
+}
+```
+
+Import the file in Sass to expose variable names:
+
+```scss
+@import "variables.json"
+
+body {
+    color: $colors-red;
+    font: $font-sans;
+}
+```
+
 
 Require sass-json-vars when compiling
 
