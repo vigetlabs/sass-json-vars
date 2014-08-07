@@ -28,9 +28,13 @@ module SassJSONVars
       return unless full_filename && File.readable?(full_filename)
 
       json      = JSON.parse(IO.read(full_filename))
-      variables = json.map { |key, value| "$#{key}: #{_convert_to_sass(value)}" }.join("\n")
+      variables = json.map { |key, value| "$#{key}: #{_convert_to_sass(value)};" }.join("\n")
 
-      Sass::Engine.new(variables)
+      Sass::Engine.new(variables, options.merge(
+          :filename => full_filename,
+          :importer => self,
+          :syntax   => :scss
+      ))
     end
 
     def _convert_to_sass(item)
