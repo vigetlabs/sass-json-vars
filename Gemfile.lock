@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    sass-json-vars (0.3.1)
+    sass-json-vars (0.3.2)
       sass (>= 3.1)
 
 GEM
@@ -18,7 +18,7 @@ GEM
     rake (10.3.2)
     rest-client (1.6.7)
       mime-types (>= 1.16)
-    sass (3.3.8)
+    sass (3.3.14)
     simplecov (0.7.1)
       multi_json (~> 1.0)
       simplecov-html (~> 0.7.1)
