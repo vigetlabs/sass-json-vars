@@ -1,4 +1,5 @@
 # Sass JSON Vars
+[![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/vigetlabs/sass-json-vars?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 [![Build Status](https://travis-ci.org/vigetlabs/sass-json-vars.png?branch=master)](https://travis-ci.org/vigetlabs/sass-json-vars)
 [![Coverage Status](https://coveralls.io/repos/vigetlabs/sass-json-vars/badge.png)](https://coveralls.io/r/vigetlabs/sass-json-vars)
