@@ -17,6 +17,8 @@
 gem install sass-json-vars
 ```
 
+After that reload rails server if you are on rails.
+
 #### For projects using Sass >= 3.3 
 
 
