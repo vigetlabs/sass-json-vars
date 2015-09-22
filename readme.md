@@ -19,7 +19,7 @@ gem install sass-json-vars
 
 After that reload rails server if you are on rails.
 
-#### For projects using Sass >= 3.3 
+#### For projects using Sass >= 3.3
 
 
 Place variables in a JSON file:
@@ -80,3 +80,11 @@ Require sass-json-vars when compiling
 ```shell
 sass style.scss -r sass-json-vars
 ```
+
+### What about node-sass?
+
+Take a look at
+[node-sass-json-importer](https://github.com/Updater/node-sass-json-importer)
+for a libsass variant of this project:
+
+https://github.com/Updater/node-sass-json-importer
