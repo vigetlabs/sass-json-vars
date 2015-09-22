@@ -1,2 +1,3 @@
 .sass-cache/*
 /coverage
+*.gem
