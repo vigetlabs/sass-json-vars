@@ -1,0 +1,11 @@
+{
+  "bool": {
+    "isRed" : true
+  },
+  "string": {
+    "red": "red"
+  },
+  "number": {
+    "padding": 10
+  }
+}

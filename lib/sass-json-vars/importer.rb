@@ -43,7 +43,7 @@ module SassJSONVars
       elsif item.is_a? Hash
         _make_map(item)
       else
-        item
+        item.to_s
       end
     end
 

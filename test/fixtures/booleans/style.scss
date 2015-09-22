@@ -1,0 +1,7 @@
+@import 'variables.json';
+
+body {
+  @if $value {
+	  color: blue;
+  }
+}

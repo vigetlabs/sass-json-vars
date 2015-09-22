@@ -36,3 +36,6 @@ DEPENDENCIES
   rake
   sass-json-vars!
   simplecov (~> 0.7.1)
+
+BUNDLED WITH
+   1.10.4

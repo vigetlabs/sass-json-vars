@@ -1,0 +1,7 @@
+@import 'variables.json';
+
+body {
+  @if map-get($bool, isRed) {
+	  color: red;
+  }
+}

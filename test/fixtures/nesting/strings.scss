@@ -1,0 +1,5 @@
+@import 'variables.json';
+
+body {
+	color: map-get($string, red);
+}
