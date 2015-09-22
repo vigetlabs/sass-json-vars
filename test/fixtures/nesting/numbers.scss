@@ -1,5 +1,5 @@
 @import 'variables.json';
 
 body {
-	padding: map-get($number, padding) + 0px;
+  padding: map-get($number, padding) + 0px;
 }
