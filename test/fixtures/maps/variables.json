@@ -1,5 +1,7 @@
 {
-    "colors" : {
-        "red": "#c33"
+  "colors": {
+    "red" : {
+      "base": "#c33"
     }
+  }
 }
